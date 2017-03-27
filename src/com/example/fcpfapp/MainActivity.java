@@ -33,39 +33,43 @@ public class MainActivity extends Activity {
 	private MyOnFocusChangListener myOnFocusChangListener=new MyOnFocusChangListener();
 	private MyClearOnClickListener myClearOnClickListener=new MyClearOnClickListener();
 
-	/*Button btnCount;
-	Button btnClean;
-	Button btnExit;
 	
-	EditText edtPrice;
-	EditText edtHuoJia;
-	EditText edtHuoYi;
-	EditText edtHuoBin;
-	EditText edtHuoDing;
-	EditText edtTuoJia;
-	EditText edtTuoYi;
-	EditText edtTuoBin;
-	EditText edtTuoDing;
-	EditText edtHuJia;
-	EditText edtHuYi;
-	EditText edtHuBin;
-	EditText edtHuDing;
-	TextView txtJGJia;
-	TextView txtJGYi;
-	TextView txtJGBin;
-	TextView txtJGDing;*/
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		findObjeck();
+		/*findObjeck();*/
+		calculate_btn=(Button)findViewById(R.id.buttonJiSuan);
+		exit_btn=(Button)findViewById(R.id.buttonexit);
+		clean_btn=(Button)findViewById(R.id.buttonclean);
+		result_view[0]=(TextView)findViewById(R.id.TextViewJGJia);
+		result_view[1]=(TextView)findViewById(R.id.TextViewJGYi);
+		result_view[2]=(TextView)findViewById(R.id.TextViewJGBin);
+		result_view[3]=(TextView)findViewById(R.id.TextViewJGDing);
+		editText[0][0]=(EditText)findViewById(R.id.edthnJia);
+		editText[0][1]=(EditText)findViewById(R.id.edthnYi);
+		editText[0][2]=(EditText)findViewById(R.id.edthnBin);
+		editText[0][3]=(EditText)findViewById(R.id.edthnDing);
+		editText[1][0]=(EditText)findViewById(R.id.edttnJia);
+		editText[1][1]=(EditText)findViewById(R.id.edttnYi);
+		editText[1][2]=(EditText)findViewById(R.id.edttnBin);
+		editText[1][3]=(EditText)findViewById(R.id.edttnDing);
+		editText[2][0]=(EditText)findViewById(R.id.edthxJia);
+		editText[2][1]=(EditText)findViewById(R.id.edthxYi);
+		editText[2][2]=(EditText)findViewById(R.id.edthxBin);
+		editText[2][3]=(EditText)findViewById(R.id.edthxDing);
+		actors_rgp=(RadioGroup)findViewById(R.id.radioGroup1);
+		radioButtonThree=(RadioButton)findViewById(R.id.radio1);
+		price_edit=(EditText)findViewById(R.id.eidtTextprice);
+		ding_view=(TextView)findViewById(R.id.textViewDin);
 		actors_rgp.setOnCheckedChangeListener(new MyOncheckChangListener());
+		
 		calculate_btn.setOnClickListener(myCal);
 		setEditFocusListener();
 		
 		exit_btn.setOnClickListener(new View.OnClickListener() {
-			
+		
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -77,30 +81,10 @@ public class MainActivity extends Activity {
 
 	
 
-	private void findObjeck() {
+	/*private void findObjeck() {
 		// TODO Auto-generated method stub
-		/* btnCount=(Button)findViewById(R.id.buttonJiSuan);
-		 btnClean=(Button)findViewById(R.id.buttonclean);
-		 btnExit=(Button)findViewById(R.id.buttonexit);
-		 edtPrice=(EditText)findViewById(R.id.eidtTextprice);
-		 edtHuoJia=(EditText)findViewById(R.id.EditTextTbirdJias);
-		 edtHuoYi=(EditText)findViewById(R.id.EditTextBirdyi);
-		 edtHuoBin=(EditText)findViewById(R.id.EditTextBirdbin);
-		 edtHuoDing=(EditText)findViewById(R.id.eidtTextBirdDing);
-		 edtTuoJia=(EditText)findViewById(R.id.EditTextTbirdJias);
-		 edtTuoYi=(EditText)findViewById(R.id.EditTextTuoYi);
-		 edtTuoBin=(EditText)findViewById(R.id.EditTextTuoBin);
-		 edtTuoDing=(EditText)findViewById(R.id.EditTextTuoDing);
-		 edtHuJia=(EditText)findViewById(R.id.EditTextHuJia);
-		 edtHuYi=(EditText)findViewById(R.id.EditTextHuYi);
-		 edtHuBin=(EditText)findViewById(R.id.EditTextHuBin);
-		 edtHuDing=(EditText)findViewById(R.id.EditTextHuDing);
-		 txtJGJia=(TextView)findViewById(R.id.TextViewJGJia);
-		 txtJGYi=(TextView)findViewById(R.id.TextViewJGYi);
-		 txtJGBin=(TextView)findViewById(R.id.TextViewJGBin);
-		 txtJGDing=(TextView)findViewById(R.id.TextViewJGDing);*/
-		 
-	}
+		
+	}*/
 	private void init()
 	{
 		for(int i=0;i<3;i++)
@@ -138,7 +122,7 @@ public class MainActivity extends Activity {
             }
 	private void calculate()
 	{
-		result[0]=result[1]=result[2]=0;
+		result[0]=result[1]=result[2]=result[3]=0;
 		for(int i=0;i<actors;i++)
 		{
 			for(int j=0; j<actors;j++)
